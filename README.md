@@ -126,5 +126,9 @@ located:
 
 
 Sources:
-
+https://www.w3schools.com/css/css3_gradients.asp
 https://stackoverflow.com/questions/38497334/how-to-run-html-file-on-localhost 
+https://stackoverflow.com/questions/38673081/how-to-make-the-content-appear-on-scrolling-down-the-webpage
+https://www.sitepoint.com/css-viewport-units-quick-start/#:~:text=The%20viewport%20is%20the%20area,tall%20as%20the%20browser%20window.
+https://alfredservice.com/
+https://www.sitepoint.com/react-intersection-observer-lazy-load-infinite-scroll-animations/
