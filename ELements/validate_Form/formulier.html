@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gebruikersformulier</title>
+    <link rel="stylesheet" href="formulier.css">
+</head>
+<body>
+    <header>
+        <h1> Mijn portfolio</h1>
+        <nav>
+            <ul>
+                <li><a href="../../MainPage.html#introductie">Introductie</a></li>
+                <li><a href="../../MainPage.html#elementen">Onderdelen</a></li>
+                <li><a href="#"> Alles samen</a></li>
+            </ul>
+        </nav>
+    </header>
+
+
+
+    <h1 class="title">Gebruikersformulier</h1>
+    <form id="userForm">
+        <label class="form" for="name">Naam:</label>
+        <input type="text" id="name" name="name" required><br><br>
+        
+        <label class="form" for="age">Leeftijd:</label>
+        <input type="number" id="age" name="age" required><br><br>
+        
+        <label class="form" for="postcode">Postcode:</label>
+        <input type="text" id="postcode" name="postcode" required pattern="^[1-9][0-9]{3}$"><br><br>
+        
+        <button type="submit">Verzenden</button>
+    </form>
+
+    <div id="result"></div>
+
+    <canvas id="snakeGame" width="400" height="400"></canvas>
+    
+    <div id="errorUnderage">
+        Deze game is niet geschikt voor minderjarigen.
+    </div>
+
+    <script src="formulier.js"></script>
+</body>
+</html>
