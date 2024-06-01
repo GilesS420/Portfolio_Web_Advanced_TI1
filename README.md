@@ -132,3 +132,6 @@ https://stackoverflow.com/questions/38673081/how-to-make-the-content-appear-on-s
 https://www.sitepoint.com/css-viewport-units-quick-start/#:~:text=The%20viewport%20is%20the%20area,tall%20as%20the%20browser%20window.
 https://alfredservice.com/
 https://www.sitepoint.com/react-intersection-observer-lazy-load-infinite-scroll-animations/
+https://chatgpt.com/share/2259fee0-cabd-4056-a01f-1df26667ecdf
+https://chatgpt.com/share/7b7df1c4-95eb-4c41-900d-cdd2d8e63371
+https://stackoverflow.com/questions/20910459/javascript-snake-game
