@@ -8,40 +8,58 @@
 </head>
 <body>
     <header>
-        <h1> Mijn portfolio</h1>
-        <nav>
-            <ul>
-                <li><a href="../../MainPage.html#introductie">Introductie</a></li>
-                <li><a href="../../MainPage.html#elementen">Onderdelen</a></li>
-                <li><a href="#"> Alles samen</a></li>
-            </ul>
-        </nav>
+        <div class="Welkom">
+             <h1>Welkom, <span id="userName"></span>!</h1>
+             <p>Leeftijd:  <span id="userAge"> </span> </p>
+        </div>
+
+        <div class="portfolio-title">
+             <h1> Mijn portfolio</h1>
+        </div>
+
+        <div class="menu">
+            <nav>
+                 <ul>
+                    <li><a href="../../MainPage.html#introductie">Introductie</a></li>
+                    <li><a href="../../MainPage.html#elementen">Onderdelen</a></li>
+                    <li><a href="#"> Alles samen</a></li>
+                </ul>
+            </nav>
+        </div>
     </header>
 
 
+<div class= "main-content">
+    <div class="container">
+        <h2 class="title">Voldoe jij aan de voorwarden? </h2>
+        <h2 class="title">Update om je naam en leeftijd in de header te zetten </h2>
+        <h2 class="title">verzenden voor in elke header </h2>
+        <form id="userForm">
+            <div class="form">
+                <label for="name">Naam:</label>
+                <input type="text" id="name" name="name" required><br><br>
+            </div>
+            
+            <div class="form">
+                <label class="form" for="age">Leeftijd:</label>
+                <input type="number" id="age" name="age" required><br><br>
+            </div>
 
-    <h1 class="title">Gebruikersformulier</h1>
-    <form id="userForm">
-        <label class="form" for="name">Naam:</label>
-        <input type="text" id="name" name="name" required><br><br>
-        
-        <label class="form" for="age">Leeftijd:</label>
-        <input type="number" id="age" name="age" required><br><br>
-        
-        <label class="form" for="postcode">Postcode:</label>
-        <input type="text" id="postcode" name="postcode" required pattern="^[1-9][0-9]{3}$"><br><br>
-        
-        <button type="submit">Verzenden</button>
+            <div class="form">
+                <label class="form" for="postcode">Postcode:</label>
+                <input type="text" id="postcode" name="postcode" required pattern="^[1-9][0-9]{3}$">
+            </div>
+
+            
+         <button type="button" id="updateButton">Update</button>
+          <br>
+        <button type="submit" value="Verzenden">Verzenden</button>
+       
+       
     </form>
-
-    <div id="result"></div>
-
-    <canvas id="snakeGame" width="400" height="400"></canvas>
-    
-    <div id="errorUnderage">
-        Deze game is niet geschikt voor minderjarigen.
-    </div>
-
+     <p id="errorUnderage" style="display: none; color: red;"> Deze game is niet geschikt voor minderjarigen.</p>
+     <div id="result"></div>
+</div>
     <script src="formulier.js"></script>
 </body>
 </html>

@@ -1,16 +1,28 @@
-body {
-    font-family: Arial, sans-serif;
+body{
+     background-image: linear-gradient(to bottom, black, #2b3137, #232847);
+     height: 100%;
+}
+
+html, body {
+
+    
     margin: 0;
     padding: 0;
-    background-image: linear-gradient(to bottom, black, #2b3137,  #232847     );
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
 }
+
 header {
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr; /* Adjust columns to your needs */
+    align-items: center;
+    padding: 20px;
     background-color: #000000;
     color: white;
-    padding: 20px 0;
-    text-align: center;
-    position: sticky;
+    position: fixed;
     top: 0;
+    width: 100%;
     z-index: 1000;
 }
 nav ul {
@@ -33,6 +45,23 @@ nav ul li a {
 nav ul li a:hover {
     background-color:#2b3137;
 }
+
+
+.Welkom {
+    text-align: left;
+}
+
+.portfolio-title {
+    text-align: center;
+}
+
+.menu {
+    
+    text-align: center;
+    grid-column: 2 / 3; 
+    margin-top: 10px; 
+}
+
 .container {
     padding: 20px;
     display: flex;

@@ -1,45 +1,67 @@
 document.addEventListener('DOMContentLoaded', () => {
     const FORM_ID = 'userForm';
 
-    // Haal het formulier element op
+   
     const form = document.getElementById(FORM_ID);
 
-    form.addEventListener('submit', async (event) => {
-        event.preventDefault();
+    const updateButton = document.getElementById('updateButton');
+    if (updateButton) {
+        updateButton.addEventListener('click', () => {
+            const name = document.getElementById('name')?.value;
+            const age = document.getElementById('age')?.value;
 
-        // Haal de waarden uit het formulier
-        const name = document.getElementById('name').value;
-        const age = document.getElementById('age').value;
-        const postcode = document.getElementById('postcode').value;
+            if (name && age && !isNaN(age)) {
+                saveToLocalStorage(name, age);
+                updateHeader();
+            } else {
+                alert('Vul een naam en leeftijd in.');
+            }
+        });
+    }
 
-        // Valideer de invoer
-        if (!validateForm(name, age, postcode)) {
-            alert('Vul alle velden correct in.');
-            return;
-        }
+    if (form) {
+        form.addEventListener('submit', async (event) => {
+            
+            console.log("form is ingediend"); //controle 1
+            
 
-        // Sla de data op in LocalStorage
-        saveToLocalStorage(name, age, postcode);
+            const name = document.getElementById('name')?.value;
+            const age = document.getElementById('age')?.value;
+            const postcode = document.getElementById('postcode')?.value;
 
-        // Controleer leeftijd en toon game of foutmelding
-        if (age >= 18) {
-            startSnakeGame();
-        } else {
-            showError();
-        }
+           
+            if (!validateForm(name, age, postcode)) {
+                alert('Vul alle velden correct in.');
+                return;
+            }
 
-        // Verstuur de gegevens naar de JSON-server
-        const user = { name, age, postcode };
-        const response = await postData('http://localhost:3000/users', user);
-        
-        if (response) {
-            displayResult(name, age, postcode);
-        }
-    });
+            
+
+
+            saveToLocalStorage(name, age, postcode);
+
+            updateHeader();
+
+            if (parseInt(age, 10) >= 18 && parseInt(age, 10) <= 25) {
+                hideError();
+            } else {
+                showError(name, age);
+            }
+            
+           
+            const user = { name, age, postcode };
+            const response = await postData('http://localhost:3000/users', user)
+
+            console.log("na het verzende van de gegevens naar de server"); // controle 2
+            if (response) {
+                displayResult(name, age, postcode);
+            }
+        });
+    }
 
     function validateForm(name, age, postcode) {
         const postcodeRegex = /^[1-9][0-9]{3}$/;
-        return name && age && postcodeRegex.test(postcode);
+        return name && age && !isNaN(age) && postcodeRegex.test(postcode);
     }
 
     function saveToLocalStorage(name, age, postcode) {
@@ -49,158 +71,35 @@ document.addEventListener('DOMContentLoaded', () => {
 
     function displayResult(name, age, postcode) {
         const resultDiv = document.getElementById('result');
-        resultDiv.innerHTML = `
-            <h2>Opgeslagen gegevens:</h2>
-            <p>Naam: ${name}</p>
-            <p>Leeftijd: ${age}</p>
-            <p>Postcode: ${postcode}</p>
-        `;
+        if (resultDiv) {
+            resultDiv.innerHTML = `
+                <h2>Opgeslagen gegevens:</h2>
+                <p>Naam: ${name}</p>
+                <p>Leeftijd: ${age}</p>
+                <p>Postcode: ${postcode}</p>
+            `;
+        }
     }
 
-    function startSnakeGame() {
-        const canvas = document.getElementById('snakeGame');
-        const errorDiv = document.getElementById('errorUnderage');
-        canvas.style.display = 'block';
-        errorDiv.style.display = 'none';
-    
-        // Start de Snake-game
-        const ctx = canvas.getContext('2d');
-        document.addEventListener('keydown', changeDirection);
-    
-        let speed = 7;
-        let tileCount = 20;
-        let tileSize = canvas.width / tileCount - 2;
-        let headX = 10;
-        let headY = 10;
-        const snakeParts = [];
-        let tailLength = 2;
-        let appleX = 5;
-        let appleY = 5;
-        let xVelocity = 0;
-        let yVelocity = 0;
-    
-        function drawGame() {
-            changeSnakePosition();
-            let result = isGameOver();
-            if (result) {
-                return;
+    function showError(name, age) {
+        const errorElement = document.getElementById('errorUnderage');
+        if (errorElement) {
+            if (age < 18) {
+                let jarenTevroeg = 18 - `${age}`;
+                alert( `Sorry, ${name}, je bent niet oud genoeg om het volgende te zien. je moet nog` + jarenTevroeg+  ' jaar wachten om dit te kunnen zien');
+            } else if (age > 25) {
+                let jarenTelaat = `${age}` -25;
+                alert(`Sorry, ${name}, je bent te oud om het volgende te zien. je bent ` + jarenTelaat + ' jaar te laat. ');
             }
-        
-            clearScreen();
-            checkAppleCollision();
-            drawApple();
-            drawSnake();
-        
-            setTimeout(drawGame, 1000 / speed);
+            errorElement.style.display = 'block';
         }
-    
-        function isGameOver() {
-            let gameOver = false;
-    
-            if (yVelocity === 0 && xVelocity === 0) {
-                return false;
-            }
-    
-            // Walls
-            if (headX < 0 || headX === tileCount || headY < 0 || headY === tileCount) {
-                gameOver = true;
-            }
-    
-            for (let i = 0; i < snakeParts.length; i++) {
-                let part = snakeParts[i];
-                if (part.x === headX && part.y === headY) {
-                    gameOver = true;
-                    break;
-                }
-            }
-    
-            if (gameOver) {
-                ctx.fillStyle = "white";
-                ctx.font = "50px Verdana";
-                ctx.fillText("Game Over!", canvas.width / 6.5, canvas.height / 2);
-            }
-    
-            return gameOver;
-        }
-    
-        function clearScreen() {
-            ctx.fillStyle = 'black';
-            ctx.fillRect(0, 0, canvas.width, canvas.height);
-        }
-    
-        function drawSnake() {
-            ctx.fillStyle = 'green';
-            for (let i = 0; i < snakeParts.length; i++) {
-                let part = snakeParts[i];
-                ctx.fillRect(part.x * tileCount, part.y * tileCount, tileSize, tileSize);
-            }
-    
-            snakeParts.push(new SnakePart(headX, headY));
-            while (snakeParts.length > tailLength) {
-                snakeParts.shift();
-            }
-    
-            ctx.fillStyle = 'orange';
-            ctx.fillRect(headX * tileCount, headY * tileCount, tileSize, tileSize);
-        }
-    
-        function SnakePart(x, y) {
-            this.x = x;
-            this.y = y;
-        }
-    
-        function changeSnakePosition() {
-            headX = headX + xVelocity;
-            headY = headY + yVelocity;
-        }
-    
-        function drawApple() {
-            ctx.fillStyle = 'red';
-            ctx.fillRect(appleX * tileCount, appleY * tileCount, tileSize, tileSize);
-        }
-    
-        function checkAppleCollision() {
-            if (appleX === headX && appleY === headY) {
-                appleX = Math.floor(Math.random() * tileCount);
-                appleY = Math.floor(Math.random() * tileCount);
-                tailLength++;
-            }
-        }
-    
-        function changeDirection(event) {
-            if (event.keyCode === 38) {
-                if (yVelocity === 1) return;
-                yVelocity = -1;
-                xVelocity = 0;
-            }
-    
-            if (event.keyCode === 40) {
-                if (yVelocity === -1) return;
-                yVelocity = 1;
-                xVelocity = 0;
-            }
-    
-            if (event.keyCode === 37) {
-                if (xVelocity === 1) return;
-                xVelocity = -1;
-                yVelocity = 0;
-            }
-    
-            if (event.keyCode === 39) {
-                if (xVelocity === -1) return;
-                xVelocity = 1;
-                yVelocity = 0;
-            }
-        }
-    
-        drawGame(); // Start het spel
     }
 
-    function showError() {
-        const canvas = document.getElementById('snakeGame');
-        const errorDiv = document.getElementById('errorUnderage');
-        canvas.style.display = 'none';
-        errorDiv.style.display = 'block';
+    function hideError() {
+        const errorElement = document.getElementById('errorUnderage');
+        if (errorElement) {
+            errorElement.style.display = 'none';
+        }
     }
 
     async function postData(url = '', data = {}) {
@@ -212,9 +111,23 @@ document.addEventListener('DOMContentLoaded', () => {
                 },
                 body: JSON.stringify(data)
             });
+            if (!response.ok) {
+                throw new Error('Netwerk error');
+            }
             return response.json();
         } catch (error) {
-            console.error('Error:', error);
+            console.error('probleem:', error);
         }
     }
 });
+function updateHeader() {
+        const userNameSpan = document.getElementById('userName');
+        const userAgeSpan = document.getElementById('userAge');
+
+        const user = JSON.parse(localStorage.getItem('user'));
+        if (user){
+        userNameSpan.textContent = user.name;
+         userAgeSpan.textContent = user.age;
+        }
+        
+    }
