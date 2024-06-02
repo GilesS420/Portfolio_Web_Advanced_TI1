@@ -134,4 +134,10 @@ https://alfredservice.com/
 https://www.sitepoint.com/react-intersection-observer-lazy-load-infinite-scroll-animations/
 https://chatgpt.com/share/2259fee0-cabd-4056-a01f-1df26667ecdf
 https://chatgpt.com/share/7b7df1c4-95eb-4c41-900d-cdd2d8e63371
+https://stackoverflow.com/questions/62666734/localstorage-data-disappears-after-the-page-is-refreshed
 https://stackoverflow.com/questions/20910459/javascript-snake-game
+https://stackoverflow.com/questions/45536537/centering-in-css-grid
+https://www.w3schools.com/css/css_grid.asp
+https://www.youtube.com/watch?v=hVmyqgG9jx4&list=PLGsnrfn8XzXhJUyCxjyvMmHDD-HbL2pDy&index=11&ab_channel=MikeDerycke
+https://www.youtube.com/watch?v=PUrpHmWSf_8&list=PLGsnrfn8XzXhJUyCxjyvMmHDD-HbL2pDy&index=10&ab_channel=MikeDerycke
+https://www.youtube.com/watch?v=jH-aOdzAuwA&list=PLGsnrfn8XzXhJUyCxjyvMmHDD-HbL2pDy&index=9&ab_channel=MikeDerycke
