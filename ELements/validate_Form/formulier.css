@@ -21,6 +21,7 @@ header {
     width: 100%;
     z-index: 1000;
 }
+
 nav ul {
     list-style: none;
     padding: 0;
@@ -28,6 +29,7 @@ nav ul {
     display: flex;
     justify-content: center;
 }
+
 nav ul li {
     margin: 0 10px;
 }
@@ -38,10 +40,10 @@ nav ul li a {
     padding: 5px 10px;
     transition: transform 0.5s;
 }
-nav ul li a:hover {
-    background-color:#2b3137;
-}
 
+nav ul li a:hover {
+    background-color: #2b3137;
+}
 
 .Welkom {
     text-align: left;
@@ -52,17 +54,18 @@ nav ul li a:hover {
 }
 
 .menu {
-    
     text-align: center;
     grid-column: 2 / 3; 
     margin-top: 10px; 
 }
+
 .main-content {
     display: flex;
     justify-content: center;
     align-items: center;
     flex: 1;
     width: 100%;
+    flex-direction: column;
 }
 
 .container {
@@ -72,35 +75,104 @@ nav ul li a:hover {
 
 .title {
     color: rgb(255, 255, 255);
-    
     width: 100%;
     padding: 10px;
     align-items: center;
     display: block;
     margin-bottom: 20px;
-    width: 100%;
 }
 
 .form {
     color: rgb(255, 255, 255);
-    margin-bottom: 30px;
-    margin-top: 20px;
-    
+    margin-bottom: 10px;
+    margin-top: 10px;
+    align-items: center;
 }
+
 form {
-    margin-left: 25%;
-    width: 45%;
     background-color: #2b3137;
-    padding: 20px;
+    padding: 10px;
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
     display: flex;
     flex-direction: column;
     align-items: center;
+    text-align: center;
+    height: 400px;
+    width: 50%; /* Adjusted to 50% of the container width */
+    margin: 20px auto; /* Center the form horizontally */
+}
+
+.narrow {
+    width: 100%; /* Make the form narrower */
 }
 
 form .form {
     font-size: large;
     width: 100%;
-    max-width: 40
+}
+
+form label {
+    width: 100%; /* Make label span full width for alignment */
+    text-align: left; /* Align text to the left */
+}
+
+form input {
+    width: 200px; /* Make input fields span full width */
+    margin-bottom: 0px; /* Add margin for spacing */
+}
+
+form button {
+    margin-top: 10px; /* Add margin for spacing */
+}
+
+#data-table {
+    width: 200%;
+    align-items: left;
+    text-align: center;
+    margin: 20px auto; /* Center the elements horizontally */
+    border-collapse: collapse;
+    background-color: #2b3137;
+    color: white;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+#data-table thead {
+    background-color: #232847;
+}
+
+#data-table th, #data-table td {
+    padding: 10px;
+    text-align: left;
+}
+
+#data-table th {
+    font-weight: bold;
+}
+
+#data-table tbody tr:nth-child(odd) {
+    background-color: #2b3137;
+}
+
+#data-table tbody tr:nth-child(even) {
+    background-color: #3a3f50;
+}
+
+#data-table tbody tr:hover {
+    background-color: #444b5e;
+}
+
+#data-table button {
+    background-color: #ff4c4c;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#data-table button:hover {
+    background-color: #ff1a1a;
 }
