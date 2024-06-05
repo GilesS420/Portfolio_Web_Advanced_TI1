@@ -1,11 +1,14 @@
-body{
-     background-image: linear-gradient(to bottom, black, #2b3137, #232847);
-     height: 100%;
+body {
+    background-image: linear-gradient(to bottom, black, #2b3137, #232847);
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
 }
 
 html, body {
-
-    
     margin: 0;
     padding: 0;
     font-family: Arial, sans-serif;
@@ -15,7 +18,7 @@ html, body {
 
 header {
     display: grid;
-    grid-template-columns: 1fr 2fr 1fr; /* Adjust columns to your needs */
+    grid-template-columns: 1fr 2fr 1fr;
     align-items: center;
     padding: 20px;
     background-color: #000000;
@@ -25,6 +28,7 @@ header {
     width: 100%;
     z-index: 1000;
 }
+
 nav ul {
     list-style: none;
     padding: 0;
@@ -32,6 +36,7 @@ nav ul {
     display: flex;
     justify-content: center;
 }
+
 nav ul li {
     margin: 0 10px;
 }
@@ -42,10 +47,10 @@ nav ul li a {
     padding: 5px 10px;
     transition: transform 0.5s;
 }
-nav ul li a:hover {
-    background-color:#2b3137;
-}
 
+nav ul li a:hover {
+    background-color: #2b3137;
+}
 
 .Welkom {
     text-align: left;
@@ -56,10 +61,9 @@ nav ul li a:hover {
 }
 
 .menu {
-    
     text-align: center;
-    grid-column: 2 / 3; 
-    margin-top: 10px; 
+    grid-column: 2 / 3;
+    margin-top: 10px;
 }
 
 .container {
@@ -69,22 +73,22 @@ nav ul li a:hover {
     justify-content: space-between;
     text-align: center;
 }
+
 .section-title {
     text-align: center;
     margin-bottom: 20px;
     opacity: 0;
     transition: opacity 1s;
 }
-.title-p{
+
+.title-p {
     text-align: left;
     margin-bottom: 20px;
     opacity: 0;
     transition: opacity 1s;
 }
 
-
-
-#introductie{ 
+#introductie {
     animation: fadeIn 1s ease-out forwards;
     display: flex;
     flex-direction: column;
@@ -94,18 +98,16 @@ nav ul li a:hover {
     color: white;
     padding-left: 33vh;
     padding-top: 0.5vh;
-    
 }
+
 #introductie h2 {
     font-size: 5em;
-    margin-bottom: 30px;    
+    margin-bottom: 30px;
 }
 
-
-#introductie p{
+#introductie p {
     font-size: 2em;
-    max-width: 600px ;
-    text-align: 600px;
+    max-width: 600px;
     text-align: left;
     color: #e0e1dd;
 }
@@ -115,14 +117,14 @@ nav ul li a:hover {
     text-decoration: none;
 }
 
-#introductue a:hover{
+#introductue a:hover {
     border-bottom: 1px solid transparent;
 }
 
-.all-elements{
+.all-elements {
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between;
+    justify-content: center;
     text-align: center;
     padding: 20px;
     width: 100%;
@@ -134,17 +136,18 @@ nav ul li a:hover {
     
 }
 
-
 .element {
-    margin: 40px 20px 40px 20px ;
-    padding: 0px;
+    font-size: x-large;
+    margin: 40px 20px;
+    padding: 0;
     background-color: #1c253b;
     border-color: #1c253b;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     border-radius: 20px;
-    flex: 1 0 calc(25% - 40px);
+    flex: 1 0 calc(33% - 100px);
     box-sizing: border-box;
-    min-height: 150px;
+    min-height: 400px;
+    min-width: 400px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -153,20 +156,20 @@ nav ul li a:hover {
     opacity: 0;
     transition: opacity 1s, transform 0.5s;
     position: relative;
-    
 }
 
-.element:hover{
-    transform: translateY(-5px); 
+.element:hover {
+    transform: translateY(-5px);
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
 }
-#elementen{
+
+#elementen {
     text-align: center;
     margin: 0 auto;
     max-width: 800px;
 }
 
-.element a{
+.element a {
     padding-top: 50%;
     display: block;
     text-align: center;
@@ -176,7 +179,7 @@ nav ul li a:hover {
     color: #e0e1dd;
 }
 
-.extra-text{
+.extra-text {
     display: none;
     position: absolute;
     text-align: left;
@@ -187,52 +190,47 @@ nav ul li a:hover {
     color: white;
     padding: 10px;
     border-radius: 5px;
+    pointer-events: none;
 }
 
-.element:hover .extra-text{
+.element:hover .extra-text {
     display: block;
 }
 
-.visible{
+.visible {
     opacity: 1 !important;
 }
 
-
-
-
-
-
 @media only screen and (max-width: 780px) {
-   
     .element {
-        flex: 1 0 100%; 
+        flex: 1 0 100%;
     }
 }
+
 @media (max-width: 480px) {
-    .box {
-        width: calc(100% - 40px); /* Adjust width for 1 box per row on very small screens */
+    .element {
+        width: calc(100% - 40px);
     }
 }
 
-
-@keyframes fadeIn{
-    from{
+@keyframes fadeIn {
+    from {
         opacity: 0;
         transform: scale(0.5);
     }
-    to{
+    to {
         opacity: 1;
         transform: scale(1);
     }
 }
 
-@keyframes fadeOut{
-    from{
+@keyframes fadeOut {
+    from {
         opacity: 1;
         transform: scale(1);
-    }to{
+    }
+    to {
         opacity: 0;
         transform: scale(0.5);
     }
-    
 }
