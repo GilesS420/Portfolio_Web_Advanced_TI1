@@ -126,6 +126,7 @@ located:
 
 
 Sources:
+
 https://www.w3schools.com/css/css3_gradients.asp
 https://stackoverflow.com/questions/38497334/how-to-run-html-file-on-localhost 
 https://stackoverflow.com/questions/38673081/how-to-make-the-content-appear-on-scrolling-down-the-webpage
@@ -141,3 +142,5 @@ https://www.w3schools.com/css/css_grid.asp
 https://www.youtube.com/watch?v=hVmyqgG9jx4&list=PLGsnrfn8XzXhJUyCxjyvMmHDD-HbL2pDy&index=11&ab_channel=MikeDerycke
 https://www.youtube.com/watch?v=PUrpHmWSf_8&list=PLGsnrfn8XzXhJUyCxjyvMmHDD-HbL2pDy&index=10&ab_channel=MikeDerycke
 https://www.youtube.com/watch?v=jH-aOdzAuwA&list=PLGsnrfn8XzXhJUyCxjyvMmHDD-HbL2pDy&index=9&ab_channel=MikeDerycke
+https://developer.mozilla.org/en-US/docs/Web/API/Window/localStorage
+https://www.w3schools.com/jsref/prop_win_localstorage.asp
