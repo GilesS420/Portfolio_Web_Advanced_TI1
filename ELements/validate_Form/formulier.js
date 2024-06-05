@@ -1,8 +1,7 @@
 let jsonData = [
-    { "id": 1, "name": "John Doe", "age": 30 },
-    { "id": 2, "name": "Jane Doe", "age": 25 },
-    { "id": 3, "name": "Sam Smith", "age": 22 }
 ];
+let updateClicked = false;
+
 
 function updateTable() {
     const tbody = document.querySelector('#data-table tbody');
@@ -132,5 +131,10 @@ function hideError() {
 
 document.addEventListener('DOMContentLoaded', () => {
     updateTable();
+    updateHeader();
+});
+
+document.getElementById('updateButton').addEventListener('click', function(event) {
+    updateClicked = true;
     updateHeader();
 });

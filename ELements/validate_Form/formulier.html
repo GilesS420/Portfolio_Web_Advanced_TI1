@@ -22,7 +22,6 @@
                  <ul>
                     <li><a href="../../MainPage.html#introductie">Introductie</a></li>
                     <li><a href="../../MainPage.html#elementen">Onderdelen</a></li>
-                    <li><a href="#"> Alles samen</a></li>
                 </ul>
             </nav>
         </div>
@@ -36,7 +35,7 @@
                         <th>ID</th>
                         <th>Naam</th>
                         <th>Leeftijd</th>
-                        <th>Actie</th>
+                        <th></th>
                     </tr>
                 </thead>
                 <tbody>
@@ -59,12 +58,14 @@
                     <label for="postcode">Postcode:</label>
                     <input type="text" id="postcode" name="postcode" required pattern="^[1-9][0-9]{3}$"><br><br>
                 </div>
-                <button type="button" id="updateButton">Update</button>
+              
                 <br>
-                <button type="submit">Toevoegen</button>
+                <button type="submit" class="button" >Toevoegen</button>
                 <br>
-                <button type="submit" value="Verzenden">Verzenden</button>
+                <button type="submit" value="Verzenden" class="button">Verzenden</button>
             </form>
+
+            <p class="side-tekst"> Geef hier namen, leeftijden en ID's in. Geef als laatste jouw naam, leeftijd, postcode in en geef jezelf een ID</p>
             <p id="errorUnderage" style="display: none; color: red;">Deze game is niet geschikt voor minderjarigen.</p>
             <div id="result"></div>
         </div>

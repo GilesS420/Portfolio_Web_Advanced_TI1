@@ -66,11 +66,15 @@ nav ul li a:hover {
     flex: 1;
     width: 100%;
     flex-direction: column;
+    position: relative;
 }
 
 .container {
     text-align: center;
     display: block;
+    position: relative;
+    width: 80%; /* Adjust the width as needed */
+    margin: auto;
 }
 
 .title {
@@ -127,7 +131,7 @@ form button {
 }
 
 #data-table {
-    width: 200%;
+    width: 80%; /* Adjust the table width as needed */
     align-items: left;
     text-align: center;
     margin: 20px auto; /* Center the elements horizontally */
@@ -175,4 +179,13 @@ form button {
 
 #data-table button:hover {
     background-color: #ff1a1a;
+}
+
+.side-tekst {
+    margin-left: 20px;
+    align-self: flex-start; 
+    width: 300px; 
+    text-align: left;
+    font-size: small; 
+    color: white;
 }
