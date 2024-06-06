@@ -1,10 +1,41 @@
 {
   "users": [
     {
-      "id": 6,
+      "id": "6",
       "name": "DaufSnauf",
       "age": 30,
       "postcode": "1900"
+    },
+    {
+      "id": 5,
+      "name": "45",
+      "age": 5
+    },
+    {
+      "id": 20,
+      "name": "DaufSnauf",
+      "age": 20
+    },
+    {
+      "id": 20,
+      "name": "Giles",
+      "age": 4561
+    },
+    {
+      "id": 21,
+      "name": "Giles",
+      "age": 20
+    },
+    {
+      "id": 20,
+      "name": "DaufSnauf",
+      "age": 30,
+      "postcode": "1700"
+    },
+    {
+      "id": 6,
+      "name": "Biggus_Dickus69",
+      "age": 30
     }
   ]
 }

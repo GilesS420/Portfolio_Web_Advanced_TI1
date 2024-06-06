@@ -7,27 +7,26 @@ document.addEventListener('DOMContentLoaded', () => {
         .then(response => response.json())
         .then(data => {
             const user = data.users;
-            localStorage.setItem('user', JSON.stringify(user)); // Opslaan van gebruikersgegevens in localStorage
-            updateHeader(); // Bijwerken van de header met de gebruikersgegevens
+            localStorage.setItem('user', JSON.stringify(user)); 
+            
         })
         .catch(error => console.error('Fout bij het laden van gebruikersgegevens:', error));
 
     const savedData = localStorage.getItem('jsonData');
     jsonData = savedData ? JSON.parse(savedData) : [];
 
-    updateTable();
     updateHeader();
     restoreCardData();
 });
 
 function generateSummary() {
-    const user = JSON.parse(localStorage.getItem('users')); 
+    const user = JSON.parse(localStorage.getItem('user')); 
     const cardIds = Object.keys(localStorage).filter(key => key.startsWith('card_'));
     const cardsData = cardIds.map(key => JSON.parse(localStorage.getItem(key)));
     let summary = '<h2>Samenvatting:</h2>';
 
     if (user) {
-        summary += `<p>Gebruikersnaam: ${user.name}</p>`;
+        summary += `<p>Ik ben, ${user.name}. </p>`;
         summary += `<p>Leeftijd: ${user.age}</p>`;
         summary += `<p>Postcode: ${user.postcode}</p>`; // Let op de correcte spelling van postcode
     } else {
