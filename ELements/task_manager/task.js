@@ -1,9 +1,27 @@
 document.getElementById('showSummaryBtn').addEventListener('click', function() {
     generateSummary(); 
 });
- updateHeader();
+
+document.addEventListener('DOMContentLoaded', () => {
+    fetch('DB.json')
+        .then(response => response.json())
+        .then(data => {
+            const user = data.users;
+            localStorage.setItem('user', JSON.stringify(user)); // Opslaan van gebruikersgegevens in localStorage
+            updateHeader(); // Bijwerken van de header met de gebruikersgegevens
+        })
+        .catch(error => console.error('Fout bij het laden van gebruikersgegevens:', error));
+
+    const savedData = localStorage.getItem('jsonData');
+    jsonData = savedData ? JSON.parse(savedData) : [];
+
+    updateTable();
+    updateHeader();
+    restoreCardData();
+});
+
 function generateSummary() {
-    const user = JSON.parse(localStorage.getItem('user'));
+    const user = JSON.parse(localStorage.getItem('users')); 
     const cardIds = Object.keys(localStorage).filter(key => key.startsWith('card_'));
     const cardsData = cardIds.map(key => JSON.parse(localStorage.getItem(key)));
     let summary = '<h2>Samenvatting:</h2>';
@@ -11,6 +29,9 @@ function generateSummary() {
     if (user) {
         summary += `<p>Gebruikersnaam: ${user.name}</p>`;
         summary += `<p>Leeftijd: ${user.age}</p>`;
+        summary += `<p>Postcode: ${user.postcode}</p>`; // Let op de correcte spelling van postcode
+    } else {
+        summary += '<p>Geen gebruikersgegevens gevonden.</p>';
     }
 
     if (cardsData.length > 0) {
@@ -24,27 +45,4 @@ function generateSummary() {
     }
 
     document.getElementById('taskSummary').innerHTML = summary;
-}
-
-
-document.addEventListener('DOMContentLoaded', () => {
-    const savedData = localStorage.getItem('jsonData');
-    jsonData = savedData ? JSON.parse(savedData) : [];
-
-    updateTable();
-    updateHeader();
-    restoreCardData(); 
-});
-
-
-function updateHeader() {
-    const userNameSpan = document.getElementById('userName');
-    const userAgeSpan = document.getElementById('userAge');
-
-    const user = JSON.parse(localStorage.getItem('user'));
-    if (user){
-    userNameSpan.textContent = user.name;
-     userAgeSpan.textContent = user.age;
-    }
-    
 }

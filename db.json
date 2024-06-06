@@ -1,4 +1,10 @@
 {
   "users": [
+    {
+      "id": 6,
+      "name": "DaufSnauf",
+      "age": 30,
+      "postcode": "1900"
+    }
   ]
 }
