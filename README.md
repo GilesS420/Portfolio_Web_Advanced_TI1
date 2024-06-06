@@ -144,3 +144,4 @@ https://www.youtube.com/watch?v=PUrpHmWSf_8&list=PLGsnrfn8XzXhJUyCxjyvMmHDD-HbL2
 https://www.youtube.com/watch?v=jH-aOdzAuwA&list=PLGsnrfn8XzXhJUyCxjyvMmHDD-HbL2pDy&index=9&ab_channel=MikeDerycke
 https://developer.mozilla.org/en-US/docs/Web/API/Window/localStorage
 https://www.w3schools.com/jsref/prop_win_localstorage.asp
+https://chatgpt.com/share/73c47d24-03cc-4af2-a72c-a20bc9315a4f
