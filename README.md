@@ -145,3 +145,4 @@ https://www.youtube.com/watch?v=jH-aOdzAuwA&list=PLGsnrfn8XzXhJUyCxjyvMmHDD-HbL2
 https://developer.mozilla.org/en-US/docs/Web/API/Window/localStorage
 https://www.w3schools.com/jsref/prop_win_localstorage.asp
 https://chatgpt.com/share/73c47d24-03cc-4af2-a72c-a20bc9315a4f
+https://chatgpt.com/share/1f7f8b3e-a9c1-4adf-ae47-3407adc30c0b
