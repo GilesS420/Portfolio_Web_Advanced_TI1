@@ -73,7 +73,7 @@ nav ul li a:hover {
     text-align: center;
     display: block;
     position: relative;
-    width: 80%; /* Adjust the width as needed */
+    width: 80%; 
     margin: auto;
 }
 
@@ -103,12 +103,12 @@ form {
     align-items: center;
     text-align: center;
     height: 400px;
-    width: 50%; /* Adjusted to 50% of the container width */
-    margin: 20px auto; /* Center the form horizontally */
+    width: 50%; 
+    margin: 20px auto; 
 }
 
 .narrow {
-    width: 100%; /* Make the form narrower */
+    width: 100%; 
 }
 
 form .form {
@@ -117,24 +117,24 @@ form .form {
 }
 
 form label {
-    width: 100%; /* Make label span full width for alignment */
-    text-align: left; /* Align text to the left */
+    width: 100%; 
+    text-align: left; 
 }
 
 form input {
-    width: 200px; /* Make input fields span full width */
-    margin-bottom: 0px; /* Add margin for spacing */
+    width: 200px; 
+    margin-bottom: 0px; 
 }
 
 form button {
-    margin-top: 10px; /* Add margin for spacing */
+    margin-top: 10px; 
 }
 
 #data-table {
-    width: 80%; /* Adjust the table width as needed */
+    width: 80%; 
     align-items: left;
     text-align: center;
-    margin: 20px auto; /* Center the elements horizontally */
+    margin: 20px auto; 
     border-collapse: collapse;
     background-color: #2b3137;
     color: white;
