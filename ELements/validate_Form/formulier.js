@@ -149,10 +149,10 @@ async function getUserDataFromDB() {
 }
 document.addEventListener('DOMContentLoaded', () => {
     updateTable();
-    updateHeader();
+   
 });
 
 document.getElementById('updateButton').addEventListener('click', function(event) {
     updateClicked = true;
-    updateHeader();
+   
 });
