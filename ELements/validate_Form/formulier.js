@@ -54,11 +54,10 @@ document.getElementById('toevoegen').addEventListener('click', function(event) {
         return;
     }
 
-    const newItem = { id, name, age };
+    const newItem = { id, name, age};
     jsonData.push(newItem);
     saveToLocalStorage(newItem); // Opslaan in lokale opslag
 
-    updateHeader();
     updateTable();
     document.getElementById('add-item-form').reset();
 });
@@ -82,7 +81,7 @@ document.getElementById('verzenden').addEventListener('click', async function(ev
     const newItem = { id, name, age, postcode };
     
     try {
-        await saveToDatabase(newItem); // Verzenden naar database
+        await saveToDatabase(newItem); 
         alert('Gegevens zijn succesvol verzonden naar de database.');
     } catch (error) {
         console.error('Er is een probleem opgetreden tijdens het verzenden naar de database:', error);

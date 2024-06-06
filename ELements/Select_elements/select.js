@@ -1,10 +1,8 @@
 let jsonData = [];
 let updateClicked = false;
-
 function updateTable() {
     const tbody = document.querySelector('#data-table tbody');
     tbody.innerHTML = '';
-
     jsonData.forEach((item, index) => {
         const row = document.createElement('tr');
         row.innerHTML = `
@@ -15,13 +13,11 @@ function updateTable() {
         `;
         tbody.appendChild(row);
     });
-
     document.querySelectorAll('.editable').forEach(cell => {
         cell.addEventListener('blur', function(event) {
             const index = event.target.getAttribute('data-index');
             const field = event.target.getAttribute('data-field');
             const value = event.target.innerText;
-
             if (field === "age") {
                 jsonData[index][field] = parseInt(value);
             } else {
@@ -30,56 +26,44 @@ function updateTable() {
         });
     });
 }
-
 function deleteItem(index) {
     jsonData.splice(index, 1);
     updateTable();
 }
-
 document.getElementById('add-item-form').addEventListener('submit', async function(event) {
     event.preventDefault();
-
     const id = document.getElementById('id').value;
     const name = document.getElementById('name').value;
     const age = document.getElementById('age').value;
     const postcode = document.getElementById('postcode').value;
-
     if (!validateForm(name, age, postcode)) {
         alert('Vul alle velden correct in.');
         return;
     }
-
     const newItem = { id: parseInt(id), name: name, age: parseInt(age) };
     jsonData.push(newItem);
     saveToLocalStorage(name, age, postcode);
-
     // Save to db.json via POST request
     await saveToDatabase(newItem);
-
-    updateHeader();
     updateTable();
     event.target.reset();
 });
-
 function validateForm(name, age, postcode) {
     const postcodeRegex = /^[1-9][0-9]{3}$/;
     return name && age && !isNaN(age) && postcodeRegex.test(postcode);
 }
-
 function saveToLocalStorage(name, age, postcode) {
     const user = { name, age, postcode };
     localStorage.setItem('user', JSON.stringify(user));
 }
-
 async function saveToDatabase(data) {
-    const url = 'http://your-server-endpoint/db.json'; // Replace with your actual server endpoint
+    const url = 'http://localhost:3000/users'; 
     try {
         await postData(url, data);
     } catch (error) {
         console.error('Failed to save data to the server:', error);
     }
 }
-
 async function postData(url = '', data = {}) {
     try {
         const response = await fetch(url, {
@@ -98,22 +82,11 @@ async function postData(url = '', data = {}) {
     }
 }
 
-function updateHeader() {
-    const userNameSpan = document.getElementById('userName');
-    const userAgeSpan = document.getElementById('userAge');
-    const user = JSON.parse(localStorage.getItem('user'));
-    if (user) {
-        userNameSpan.textContent = user.name;
-        userAgeSpan.textContent = user.age;
-    }
-}
-
 document.addEventListener('DOMContentLoaded', () => {
     updateTable();
-    updateHeader();
+ 
 });
 
 document.getElementById('updateButton').addEventListener('click', function(event) {
     updateClicked = true;
-    updateHeader();
 });

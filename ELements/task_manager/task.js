@@ -8,7 +8,7 @@ document.addEventListener('DOMContentLoaded', () => {
         .then(data => {
             const user = data.users;
             localStorage.setItem('user', JSON.stringify(user)); // Opslaan van gebruikersgegevens in localStorage
-            updateHeader(); // Bijwerken van de header met de gebruikersgegevens
+    
         })
         .catch(error => console.error('Fout bij het laden van gebruikersgegevens:', error));
 
@@ -16,8 +16,7 @@ document.addEventListener('DOMContentLoaded', () => {
     jsonData = savedData ? JSON.parse(savedData) : [];
 
     updateTable();
-    updateHeader();
-    restoreCardData();
+     restoreCardData();
 });
 
 function generateSummary() {
