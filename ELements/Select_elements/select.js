@@ -98,13 +98,22 @@ async function postData(url = '', data = {}) {
     }
 }
 
-
+function updateHeader() {
+    const userNameSpan = document.getElementById('userName');
+    const userAgeSpan = document.getElementById('userAge');
+    const user = JSON.parse(localStorage.getItem('user'));
+    if (user) {
+        userNameSpan.textContent = user.name;
+        userAgeSpan.textContent = user.age;
+    }
+}
 
 document.addEventListener('DOMContentLoaded', () => {
     updateTable();
+    updateHeader();
 });
 
 document.getElementById('updateButton').addEventListener('click', function(event) {
     updateClicked = true;
-
+    updateHeader();
 });

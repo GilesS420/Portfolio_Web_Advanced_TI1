@@ -1,7 +1,7 @@
 let jsonData = [
 ];
 let updateClicked = false;
-
+(updateHeader);
 
 function updateTable() {
     const tbody = document.querySelector('#data-table tbody');
@@ -38,12 +38,10 @@ function deleteItem(index) {
     updateTable();
 }
 
-document.getElementById('add-item-form').addEventListener('submit', function(event) {
-    event.preventDefault();
-
-    const id = document.getElementById('id').value;
+document.getElementById('toevoegen').addEventListener('click', function(event) {
+    const id = parseInt(document.getElementById('id').value);
     const name = document.getElementById('name').value;
-    const age = document.getElementById('age').value;
+    const age = parseInt(document.getElementById('age').value);
     const postcode = document.getElementById('postcode').value;
 
     if (!validateForm(name, age, postcode)) {
@@ -51,11 +49,45 @@ document.getElementById('add-item-form').addEventListener('submit', function(eve
         return;
     }
 
-    jsonData.push({ id: parseInt(id), name: name, age: parseInt(age) });
-    saveToLocalStorage(name, age, postcode);
+    if (jsonData.some(item => item.id === id)) {
+        alert('ID bestaat al. Gebruik een ander ID.');
+        return;
+    }
+
+    const newItem = { id, name, age };
+    jsonData.push(newItem);
+    saveToLocalStorage(newItem); // Opslaan in lokale opslag
+
     updateHeader();
     updateTable();
-    event.target.reset();
+    document.getElementById('add-item-form').reset();
+});
+
+document.getElementById('verzenden').addEventListener('click', async function(event) {
+    const id = parseInt(document.getElementById('id').value);
+    const name = document.getElementById('name').value;
+    const age = parseInt(document.getElementById('age').value);
+    const postcode = document.getElementById('postcode').value;
+
+    if (!validateForm(name, age, postcode)) {
+        alert('Vul alle velden correct in.');
+        return;
+    }
+
+    if (jsonData.some(item => item.id === id)) {
+        alert('ID bestaat al. Gebruik een ander ID.');
+        return;
+    }
+
+    const newItem = { id, name, age, postcode };
+    
+    try {
+        await saveToDatabase(newItem); // Verzenden naar database
+        alert('Gegevens zijn succesvol verzonden naar de database.');
+    } catch (error) {
+        console.error('Er is een probleem opgetreden tijdens het verzenden naar de database:', error);
+        alert('Er is een probleem opgetreden tijdens het verzenden naar de database.');
+    }
 });
 
 function validateForm(name, age, postcode) {
@@ -68,13 +100,19 @@ function saveToLocalStorage(name, age, postcode) {
     localStorage.setItem('user', JSON.stringify(user));
 }
 
-function updateHeader() {
-    const userNameSpan = document.getElementById('userName');
-    const userAgeSpan = document.getElementById('userAge');
-    const user = JSON.parse(localStorage.getItem('user'));
-    if (user) {
-        userNameSpan.textContent = user.name;
-        userAgeSpan.textContent = user.age;
+function saveToLocalStorage(name, age, postcode) {
+    const user = { name, age, postcode };
+    localStorage.setItem('user', JSON.stringify(user));
+}
+
+
+
+async function saveToDatabase(data) {
+    const url = 'http://localhost:3000/users'; 
+    try {
+        await postData(url, data);
+    } catch (error) {
+        console.error('Failed to save data to the server:', error);
     }
 }
 
@@ -96,39 +134,20 @@ async function postData(url = '', data = {}) {
     }
 }
 
-function displayResult(name, age, postcode) {
-    const resultDiv = document.getElementById('result');
-    if (resultDiv) {
-        resultDiv.innerHTML = `
-            <h2>Opgeslagen gegevens:</h2>
-            <p>Naam: ${name}</p>
-            <p>Leeftijd: ${age}</p>
-            <p>Postcode: ${postcode}</p>
-        `;
-    }
-}
-
-function showError(name, age) {
-    const errorElement = document.getElementById('errorUnderage');
-    if (errorElement) {
-        if (age < 18) {
-            let jarenTevroeg = 18 - age;
-            alert(`Sorry, ${name}, je bent niet oud genoeg om het volgende te zien. je moet nog ${jarenTevroeg} jaar wachten om dit te kunnen zien`);
-        } else if (age > 25) {
-            let jarenTelaat = age - 25;
-            alert(`Sorry, ${name}, je bent te oud om het volgende te zien. je bent ${jarenTelaat} jaar te laat.`);
+async function getUserDataFromDB() {
+    const url = 'http://localhost:3000/users'; 
+    try {
+        const response = await fetch(url);
+        if (!response.ok) {
+            throw new Error('Failed to fetch user data from the server');
         }
-        errorElement.style.display = 'block';
+        const userData = await response.json();
+        return userData;
+    } catch (error) {
+        console.error('Er is een fout opgetreden bij het ophalen van gebruikersgegevens:', error);
+        throw error;
     }
 }
-
-function hideError() {
-    const errorElement = document.getElementById('errorUnderage');
-    if (errorElement) {
-        errorElement.style.display = 'none';
-    }
-}
-
 document.addEventListener('DOMContentLoaded', () => {
     updateTable();
     updateHeader();

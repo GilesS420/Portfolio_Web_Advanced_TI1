@@ -8,10 +8,6 @@
 </head>
 <body>
     <header>
-        <div class="Welkom">
-             <h1>Welkom, <span id="userName"></span>!</h1>
-             <p>Leeftijd:  <span id="userAge"> </span> </p>
-        </div>
 
         <div class="portfolio-title">
              <h1> Mijn portfolio</h1>
@@ -60,12 +56,12 @@
                 </div>
               
                 <br>
-                <button type="submit" class="button" >Toevoegen</button>
+                <button id="toevoegen" type="button" class="button-toevoegen" >Toevoegen</button>
                 <br>
-                <button type="submit" value="Verzenden" class="button">Verzenden</button>
+                <button id="verzenden" type="button" value="Verzenden" class="button">Verzenden</button>
             </form>
 
-            <p class="side-tekst"> Geef hier namen, leeftijden en ID's in. Geef als laatste jouw naam, leeftijd, postcode in en geef jezelf een ID</p>
+            <p class="side-tekst"> Geef hier namen, leeftijden en ID's in en duw op toevoegen. Geef als laatste jouw naam, leeftijd, postcode en ID in en duw op verzenden</p>
             <p id="errorUnderage" style="display: none; color: red;">Deze game is niet geschikt voor minderjarigen.</p>
             <div id="result"></div>
         </div>
