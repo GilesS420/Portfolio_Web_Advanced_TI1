@@ -14,7 +14,6 @@ In je terminal, voer het volgende commando uit: ``json-server --watch db.json --
 
 
 
-
 ## Elementen
 Deze onderwerpen worden hier kort uitgelegd  met telkens een voorbeld gehaald uit het protfolio. Elk element wordt ook een locatie gegeven zodat u het makkelijker kan terugvinden in de code.
 
