@@ -2,139 +2,121 @@
 This is my portfolio to showcase my skills in web development
 
 
+
+## How to start
 To be able to have a fully functional application you need a json-server.
 if you already have it you can skip step 1.
 
-## Step 1: install the jasoon server.
-open your terminal and put in the following command npm install -g json-server
+### Step 1: install the jason server.
+open your terminal and put in the following command npm install ``-g json-server``
 this will take a few minutes to install.
 
-## step 2: start the JSON server.
-in your terminal, execute folowing command: json-server --watch db.json --port 3000
+### step 2: start the JSON server.
+in your terminal, execute folowing command: ``json-server --watch db.json --port 3000``
 the server is now running, the application will work completly now.
 
 
 
 
-
+## Elements
 These subjects are explained shortly and are implemented in the portfolio:
 
-Elementen selecteren/ Select elements
----------------------------------------------------------------------------------------------------------------------------------------------------------
+ ### Elementen selecteren/ Select elements
 explination:
 
 located: 
 
-Elementen manipuleren/ Manipulate elements
----------------------------------------------------------------------------------------------------------------------------------------------------------
+ ### Elementen manipuleren/ Manipulate elements
 explination:
 
 located: 
 
-Event aan een element koppelen/ link an event to an element
----------------------------------------------------------------------------------------------------------------------------------------------------------
+ ### Event aan een element koppelen/ link an event to an element
 explination:
 
 located: 
 
-Formulier valideren / Validate a form
----------------------------------------------------------------------------------------------------------------------------------------------------------
+ ### Formulier valideren / Validate a form
 explination:
 
 located: 
 
-Gebruiken van een constante  / usage of const.
----------------------------------------------------------------------------------------------------------------------------------------------------------
+ ### Gebruiken van een constante  / usage of const.
 explination:
 
 located: 
 
-Gebruiken van template literals / Usage of template literals
----------------------------------------------------------------------------------------------------------------------------------------------------------
+ ### Gebruiken van template literals / Usage of template literals
 explination:
 
 located: 
 
-Destructuring 
----------------------------------------------------------------------------------------------------------------------------------------------------------
+ ### Destructuring 
 explination:
 
 located: 
 
-Spread & Rest operator 
----------------------------------------------------------------------------------------------------------------------------------------------------------
+ ### Spread & Rest operator 
 explination:
 
 located: 
 
-Iteration over een array
----------------------------------------------------------------------------------------------------------------------------------------------------------
+ ### Iteration over een array
 explination:
 
 located: 
 
-Arrow function
----------------------------------------------------------------------------------------------------------------------------------------------------------
+ ### Arrow function
 explination:
 
 located: 
 
-Callback function
----------------------------------------------------------------------------------------------------------------------------------------------------------
+ ### Callback function
 explination:
 
 located: 
 
-Promise
----------------------------------------------------------------------------------------------------------------------------------------------------------
+ ### Promise
 explination:
 
 located: 
 
-Consumer methods
----------------------------------------------------------------------------------------------------------------------------------------------------------
+ ### Consumer methods
 explination:
 
 located: 
 
-Async & Await
----------------------------------------------------------------------------------------------------------------------------------------------------------
+ ### Async & Await
 explination:
 
 located: 
 
-Self executing function
----------------------------------------------------------------------------------------------------------------------------------------------------------
+ ### Self executing function
 explination:
 
 located: 
 
-Fetch om data op te halen / Frtch to retrieve data
----------------------------------------------------------------------------------------------------------------------------------------------------------
+ ### Fetch om data op te halen / Frtch to retrieve data
 explination:
 
 located: 
 
-JSON manipuleren en weergeven / Manipulate and display JSON
----------------------------------------------------------------------------------------------------------------------------------------------------------
+ ### JSON manipuleren en weergeven / Manipulate and display JSON
 explination:
 
 located: 
 
-Basis CSS Animatie / Basic css animation
----------------------------------------------------------------------------------------------------------------------------------------------------------
+ ### Basis CSS Animatie / Basic css animation
 explination:
 
 located: 
 
-Gebruiken van een flexbox of CSS grid / usage of a flexbox or a CSS grid
----------------------------------------------------------------------------------------------------------------------------------------------------------
+ ### Gebruiken van een flexbox of CSS grid / usage of a flexbox or a CSS grid
 explination:
 
 located: 
 
-Gebruik van LocalStorage / usage of local storage
----------------------------------------------------------------------------------------------------------------------------------------------------------
+ ### Gebruik van LocalStorage / usage of local storage
 explination:
 
 located: 
