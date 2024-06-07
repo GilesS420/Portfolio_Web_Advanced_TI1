@@ -9,7 +9,7 @@ if you already have it you can skip step 1.
 open your terminal and put in the following command npm install -g json-server
 this will take a few minutes to install.
 
-##step 2: start the JSON server.
+## step 2: start the JSON server.
 in your terminal, execute folowing command: json-server --watch db.json --port 3000
 the server is now running, the application will work completly now.
 
