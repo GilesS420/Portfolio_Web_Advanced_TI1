@@ -191,3 +191,21 @@ form button {
   font-size: small;
   color: white;
 }
+
+.button {
+  margin: 0 10px;
+  padding: 15px 30px;
+  font-size: 18px;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.3s;
+  border: 2px solid #2b3137;
+  border-radius: 10px;
+  background-color: #232847;
+  color: white;
+}
+
+.button:hover {
+  background-color: aqua;
+  color: #232847;
+  transform: scale(1.1);
+}
