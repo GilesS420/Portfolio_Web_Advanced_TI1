@@ -1,5 +1,5 @@
 # Portfolio_Web_Advanced_TI1
-Dit is mijn portfolio om mijn vaardigheden in webontwikkeling te presenteren.
+Dit is mijn portfolio om mijn vaardigheden in webontwikkeling te presenteren. Dit protfolio is gemaakt in opdracht van Kevin Felix voor het vak Web Advanced (TI1)
 
 
 
