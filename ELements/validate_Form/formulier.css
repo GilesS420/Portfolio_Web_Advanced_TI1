@@ -1,191 +1,193 @@
-html, body {
-    background-image: linear-gradient(to bottom, black, #2b3137, #232847);
-    background-size: cover;
-    height: 100%;
-    margin: 0;
-    padding: 0;
-    font-family: Arial, sans-serif;
-    display: flex;
-    flex-direction: column;
+html,
+body {
+  background-image: linear-gradient(to bottom, black, #2b3137, #232847);
+  background-size: cover;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  display: flex;
+  flex-direction: column;
 }
 
 header {
-    display: grid;
-    grid-template-columns: 1fr 2fr 1fr; 
-    align-items: center;
-    padding: 20px;
-    background-color: #000000;
-    color: white;
-    position: fixed;
-    top: 0;
-    width: 100%;
-    z-index: 1000;
+  display: grid;
+  grid-template-columns: 1fr 2fr 1fr;
+  align-items: center;
+  padding: 20px;
+  background-color: #000000;
+  color: white;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
 }
 
 nav ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    display: flex;
-    justify-content: center;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  justify-content: center;
 }
 
 nav ul li {
-    margin: 0 10px;
+  margin: 0 10px;
 }
 
 nav ul li a {
-    color: white;
-    text-decoration: none;
-    padding: 5px 10px;
-    transition: transform 0.5s;
+  color: white;
+  text-decoration: none;
+  padding: 5px 10px;
+  transition: transform 0.5s;
 }
 
 nav ul li a:hover {
-    background-color: #2b3137;
+  background-color: #2b3137;
 }
 
 .Welkom {
-    text-align: left;
+  text-align: left;
 }
 
 .portfolio-title {
-    text-align: center;
+  text-align: center;
 }
 
 .menu {
-    text-align: center;
-    grid-column: 2 / 3; 
-    margin-top: 10px; 
+  text-align: center;
+  grid-column: 2 / 3;
+  margin-top: 10px;
 }
 
 .main-content {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex: 1;
-    width: 100%;
-    flex-direction: column;
-    position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex: 1;
+  width: 100%;
+  flex-direction: column;
+  position: relative;
 }
 
 .container {
-    text-align: center;
-    display: block;
-    position: relative;
-    width: 80%; 
-    margin: auto;
+  text-align: center;
+  display: block;
+  position: relative;
+  width: 80%;
+  margin: auto;
 }
 
 .title {
-    color: rgb(255, 255, 255);
-    width: 100%;
-    padding: 10px;
-    align-items: center;
-    display: block;
-    margin-bottom: 20px;
+  color: rgb(255, 255, 255);
+  width: 100%;
+  padding: 10px;
+  align-items: center;
+  display: block;
+  margin-bottom: 20px;
 }
 
 .form {
-    color: rgb(255, 255, 255);
-    margin-bottom: 10px;
-    margin-top: 10px;
-    align-items: center;
+  color: rgb(255, 255, 255);
+  margin-bottom: 10px;
+  margin-top: 10px;
+  align-items: center;
 }
 
 form {
-    background-color: #2b3137;
-    padding: 10px;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    height: 400px;
-    width: 50%; 
-    margin: 20px auto; 
+  background-color: #2b3137;
+  padding: 10px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  height: 400px;
+  width: 50%;
+  margin: 20px auto;
 }
 
 .narrow {
-    width: 100%; 
+  width: 100%;
 }
 
 form .form {
-    font-size: large;
-    width: 100%;
+  font-size: large;
+  width: 100%;
 }
 
 form label {
-    width: 100%; 
-    text-align: left; 
+  width: 100%;
+  text-align: left;
 }
 
 form input {
-    width: 200px; 
-    margin-bottom: 0px; 
+  width: 200px;
+  margin-bottom: 0px;
 }
 
 form button {
-    margin-top: 10px; 
+  margin-top: 10px;
 }
 
 #data-table {
-    width: 80%; 
-    align-items: left;
-    text-align: center;
-    margin: 20px auto; 
-    border-collapse: collapse;
-    background-color: #2b3137;
-    color: white;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-    border-radius: 10px;
-    overflow: hidden;
+  width: 80%;
+  align-items: left;
+  text-align: center;
+  margin: 20px auto;
+  border-collapse: collapse;
+  background-color: #2b3137;
+  color: white;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  border-radius: 10px;
+  overflow: hidden;
 }
 
 #data-table thead {
-    background-color: #232847;
+  background-color: #232847;
 }
 
-#data-table th, #data-table td {
-    padding: 10px;
-    text-align: left;
+#data-table th,
+#data-table td {
+  padding: 10px;
+  text-align: left;
 }
 
 #data-table th {
-    font-weight: bold;
+  font-weight: bold;
 }
 
 #data-table tbody tr:nth-child(odd) {
-    background-color: #2b3137;
+  background-color: #2b3137;
 }
 
 #data-table tbody tr:nth-child(even) {
-    background-color: #3a3f50;
+  background-color: #3a3f50;
 }
 
 #data-table tbody tr:hover {
-    background-color: #444b5e;
+  background-color: #444b5e;
 }
 
 #data-table button {
-    background-color: #ff4c4c;
-    color: white;
-    border: none;
-    padding: 5px 10px;
-    border-radius: 5px;
-    cursor: pointer;
+  background-color: #ff4c4c;
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 5px;
+  cursor: pointer;
 }
 
 #data-table button:hover {
-    background-color: #ff1a1a;
+  background-color: #ff1a1a;
 }
 
 .side-tekst {
-    margin-left: 20px;
-    align-self: flex-start; 
-    width: 300px; 
-    text-align: left;
-    font-size: small; 
-    color: white;
+  margin-left: 20px;
+  align-self: flex-start;
+  width: 300px;
+  text-align: left;
+  font-size: small;
+  color: white;
 }
