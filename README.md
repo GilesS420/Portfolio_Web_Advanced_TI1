@@ -12,6 +12,11 @@ Open je terminal en voer het volgende commando in: `` npm install -g json-server
 ### stap 2: start the JSON server.
 In je terminal, voer het volgende commando uit: ``json-server --watch db.json --port 3000 ``. De server draait nu, de applicatie zal nu volledig werken.
 
+### !! je hebt ook de live-server extensie nogdig !!
+
+### stap 3: start de web-pagina
+open de file MainPage.html, en klik op *Go live* recht beneden. Dit opend automatish een tab in je browser.
+
 
 
 ## Elementen
