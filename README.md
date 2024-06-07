@@ -146,3 +146,5 @@ https://www.digitalocean.com/community/tutorials/how-to-work-with-json-in-javasc
 https://chatgpt.com/share/f30b8d73-9b3b-45ce-81a3-d9ad290fcf28
 https://www.freecodecamp.org/news/how-to-write-a-good-readme-file/
 https://chatgpt.com/share/bb2946f9-6ecf-4dba-938f-fc9b79b41e90
+
+note: door downtime can de Chat GPT server ben ik verschillende chats met chatGPT verloren
