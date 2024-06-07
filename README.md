@@ -1,129 +1,127 @@
 # Portfolio_Web_Advanced_TI1
-This is my portfolio to showcase my skills in web development
+Dit is mijn portfolio om mijn vaardigheden in webontwikkeling te presenteren.
 
 
 
-## How to start
-To be able to have a fully functional application you need a json-server.
-if you already have it you can skip step 1.
+## Hoe starten
+Om een volledig functionele applicatie te hebben, heb je een json-server nodig. Als je dit al hebt, kun je stap 1 overslaan.
 
-### Step 1: install the jason server.
-open your terminal and put in the following command npm install ``-g json-server``
-this will take a few minutes to install.
+### Stap 1: install the jason server.
+Open je terminal en voer het volgende commando in: `` npm install -g json-server ``. Dit zal enkele minuten duren om te installeren.
 
-### step 2: start the JSON server.
-in your terminal, execute folowing command: ``json-server --watch db.json --port 3000``
-the server is now running, the application will work completly now.
+### stap 2: start the JSON server.
+In je terminal, voer het volgende commando uit: ``json-server --watch db.json --port 3000 ``. De server draait nu, de applicatie zal nu volledig werken.
 
 
 
 
-## Elements
-These subjects are explained shortly and are implemented in the portfolio:
+## Elementen
+Deze onderwerpen worden hier kort uitgelegd  met telkens een voorbeld gehaald uit het protfolio. Elk element wordt ook een locatie gegeven zodat u het makkelijker kan terugvinden in de code.
 
- ### Elementen selecteren/ Select elements
-explination:
+ ### Elementen selecteren
+Uitleg:
 
-located: 
+Locatie:
 
- ### Elementen manipuleren/ Manipulate elements
-explination:
+### Elementen manipuleren
+Uitleg:
 
-located: 
+Locatie:
 
- ### Event aan een element koppelen/ link an event to an element
-explination:
+### Een gebeurtenis aan een element koppelen
+Uitleg:
 
-located: 
+Locatie:
 
- ### Formulier valideren / Validate a form
-explination:
+### Een formulier valideren
+Uitleg:
 
-located: 
+Locatie:
 
- ### Gebruiken van een constante  / usage of const.
-explination:
+### Gebruik maken van een constante
+Uitleg:
 
-located: 
+Locatie:
 
- ### Gebruiken van template literals / Usage of template literals
-explination:
+### Gebruik van template literals
+Uitleg:
 
-located: 
+Locatie:
 
- ### Destructuring 
-explination:
+### Destructuring
+Uitleg:
 
-located: 
+Locatie:
 
- ### Spread & Rest operator 
-explination:
+### Spread- & rest-operator
+Uitleg:
 
-located: 
+Locatie:
 
- ### Iteration over een array
-explination:
+### Iteration  over een array
+Uitleg:
 
-located: 
+Locatie:
 
- ### Arrow function
-explination:
+### Arrow function
+Uitleg:
 
-located: 
+Locatie:
 
- ### Callback function
-explination:
+### Callback function
+Uitleg:
 
-located: 
+Locatie:
 
- ### Promise
-explination:
+### Promise
+Uitleg:
 
-located: 
+Locatie:
 
- ### Consumer methods
-explination:
+### consumer methods
+Uitleg:
 
-located: 
+Locatie:
 
- ### Async & Await
-explination:
+### Async & Await
+Uitleg:
 
-located: 
+Locatie:
 
- ### Self executing function
-explination:
+### Self executing function
+Uitleg:
 
-located: 
+Locatie:
 
- ### Fetch om data op te halen / Frtch to retrieve data
-explination:
+### Fetch om data op te halen
+Uitleg:
 
-located: 
+Locatie:
 
- ### JSON manipuleren en weergeven / Manipulate and display JSON
-explination:
+### JSON manipuleren en weergeven
+Uitleg:
 
-located: 
+Locatie:
 
- ### Basis CSS Animatie / Basic css animation
-explination:
+### Basis CSS-animatie
+Uitleg:
 
-located: 
+Locatie:
 
- ### Gebruiken van een flexbox of CSS grid / usage of a flexbox or a CSS grid
-explination:
+### Gebruik van een flexbox of CSS-grid
+Uitleg:
 
-located: 
+Locatie:
 
- ### Gebruik van LocalStorage / usage of local storage
-explination:
+### Gebruik van LocalStorage
+Uitleg:
 
-located: 
+Locatie:
 
 
+## Bronnen:
 
-Sources:
+PowerPoints van het vak Web-essentials, Web advanced, programming essentials 1 
 
 https://www.w3schools.com/css/css3_gradients.asp
 https://stackoverflow.com/questions/38497334/how-to-run-html-file-on-localhost 
@@ -146,3 +144,6 @@ https://chatgpt.com/share/73c47d24-03cc-4af2-a72c-a20bc9315a4f
 https://chatgpt.com/share/1f7f8b3e-a9c1-4adf-ae47-3407adc30c0b
 https://www.w3schools.com/js/js_json.asp
 https://www.digitalocean.com/community/tutorials/how-to-work-with-json-in-javascript
+https://chatgpt.com/share/f30b8d73-9b3b-45ce-81a3-d9ad290fcf28
+https://www.freecodecamp.org/news/how-to-write-a-good-readme-file/
+https://chatgpt.com/share/bb2946f9-6ecf-4dba-938f-fc9b79b41e90
