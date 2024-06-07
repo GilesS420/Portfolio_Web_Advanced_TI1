@@ -1,6 +1,22 @@
 # Portfolio_Web_Advanced_TI1
 This is my portfolio to showcase my skills in web development
 
+
+To be able to have a fully functional application you need a json-server.
+if you already have it you can skip step 1.
+
+## Step 1: install the jasoon server.
+open your terminal and put in the following command npm install -g json-server
+this will take a few minutes to install.
+
+##step 2: start the JSON server.
+in your terminal, execute folowing command: json-server --watch db.json --port 3000
+the server is now running, the application will work completly now.
+
+
+
+
+
 These subjects are explained shortly and are implemented in the portfolio:
 
 Elementen selecteren/ Select elements
