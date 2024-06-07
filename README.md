@@ -18,104 +18,71 @@ In je terminal, voer het volgende commando uit: ``json-server --watch db.json --
 Deze onderwerpen worden hier kort uitgelegd  met telkens een voorbeld gehaald uit het protfolio. Elk element wordt ook een locatie gegeven zodat u het makkelijker kan terugvinden in de code.
 
  ### Elementen selecteren
-Uitleg:
-
-Locatie:
+Uitleg: De functie ``selectCard(card)`` zorgt ervoor dat wanneer een kaart wordt aangeklikt, alle andere kaarten deselecteren. De aangeklikte kaart wordt gemarkeerd als geselecteerd door de klasse ``"selected"`` toe te voegen.
 
 ### Elementen manipuleren
-Uitleg:
-
-Locatie:
+Uitleg: De functie ``changeColor`` selecteert een kaartelement dat door de gebruiker is gekozen en vraagt een nieuwe kleur. Nadat de gebruiker een kleur heeft ingevoerd, wordt de achtergrondkleur van het kaartelement aangepast.
 
 ### Een gebeurtenis aan een element koppelen
-Uitleg:
-
-Locatie:
+Uitleg: gebruik van event listeners, zoals  het toevoegen van een ``'click'-event ``listener aan elk ``'.card'-element``, waardoor een functie wordt aangeroepen wanneer erop wordt geklikt.
 
 ### Een formulier valideren
-Uitleg:
-
-Locatie:
+Uitleg: De functie ``validateForm(name, age, postcode)`` valideert het formulier op basis van de ingevoerde waarden voor naam, leeftijd en postcode.
 
 ### Gebruik maken van een constante
-Uitleg:
-
-Locatie:
+Uitleg: ``const randomOffset = Math.floor(Math.random() * 10);`` definieert een constante randomOffset. Deze constante zorgt ervoor dat er gegevens woden aangepast als er op een knop wordt geklikt
 
 ### Gebruik van template literals
-Uitleg:
-
-Locatie:
+Uitleg:  In de ``row.innerHTML`` binnen de ``updateTable()-functie`` worden Template literals gebruikt om de rij van de tabel te maken.
 
 ### Destructuring
-Uitleg:
-
-Locatie:
+Uitleg: ``const { name, age, postcode: originalPostcode } = user;``  gebruikt destructuring om specifieke eigenschappen van een object te halen.
 
 ### Spread- & rest-operator
-Uitleg:
-
-Locatie:
+Uitleg: ``const userData = { ...user, modifiedPostcode };`` maakt gebruik van de spread-operator om een object te maken met extra eigenschappen.
 
 ### Iteration  over een array
-Uitleg:
-
-Locatie:
+Uitleg: De ``forEach``-methode wordt gebruikt om door de jsonData-array te itereren in de ``updateTable()``-functie.
 
 ### Arrow function
-Uitleg:
-
-Locatie:
+Uitleg: De arrow-functie binnen de forEach-lus genereert de HTML-inhoud voor elke rij van de tabel door de gegevens in de jsonData-array te doorlopen.
 
 ### Callback function
-Uitleg:
-
-Locatie:
+Uitleg: De ``addEventListener``-methode accepteert een callback-functie, bijvoorbeeld in de event listeners voor klikgebeurtenissen.
 
 ### Promise
-Uitleg:
-
-Locatie:
+Uitleg: De functie ``postData(url, data)`` retourneert een Promise omdat deze asynchrone fetch-operaties uitvoert en het resultaat afhandelt.
 
 ### consumer methods
-Uitleg:
-
-Locatie:
+Uitleg:  In de ``then()``-methode van de Promise worden de gegevens geconsumeerd die zijn opgehaald door de fetch-operatie.
 
 ### Async & Await
-Uitleg:
-
-Locatie:
+Uitleg: De functie ``saveToDatabase(data)`` is gemarkeerd met het async-keyword en wacht op de resolutie van de ``postData``-functie met het await-keyword.
 
 ### Self executing function
-Uitleg:
-
-Locatie:
+Uitleg: De zelf-uitvoerende functie in de code zorgt ervoor dat de inhoud ervan wordt uitgevoerd zodra het DOM volledig is geladen, waardoor het mogelijk is om gebruikersgegevens op te halen, te verwerken en op te slaan nadat de pagina is geladen.
 
 ### Fetch om data op te halen
-Uitleg:
-
-Locatie:
+Uitleg: In plaats van data op te halen, wordt de Fetch API gebruikt om gegevens naar een server te verzenden in de postData-functie.
 
 ### JSON manipuleren en weergeven
-Uitleg:
-
-Locatie:
+Uitleg: ``.then(response => response.json())`` converteert de response naar JSON-formaat. 
 
 ### Basis CSS-animatie
-Uitleg:
-
-Locatie:
+Uitleg: De animatie wordt gebruikt in de sectie met de id #introductie. Het element met deze id wordt geanimeerd met behulp van de fadeIn-animatie. Deze animatie past de eigenschappen opacity en transform aan om het element van onzichtbaar naar zichtbaar te laten overgaan wanneer de pagina wordt geladen.
 
 ### Gebruik van een flexbox of CSS-grid
 Uitleg:
-
-Locatie:
+-  Flexbox wordt gebruikt voor de opmaak van de elementen in de ``.container.`` Hier zorgt het voor de juiste uitlijning van de elementen binnen de container.
+  
+-  CSS Grid wordt gebruikt voor het ontwerp van de header. Het maakt gebruik van ``display: grid;`` om een raster te maken met drie kolommen.
 
 ### Gebruik van LocalStorage
-Uitleg:
+Uitleg: De functie ``saveToLocalStorage(name, age, postcode)`` gebruikt :``localStorage.setItem()`` om gegevens op te slaan in de lokale opslag van de browser.
 
-Locatie:
+
+
+ 
 
 
 ## Bronnen:
