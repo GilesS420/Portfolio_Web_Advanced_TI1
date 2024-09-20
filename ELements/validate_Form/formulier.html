@@ -1,71 +1,84 @@
 <!DOCTYPE html>
 <html lang="nl">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Gebruikersformulier</title>
-    <link rel="stylesheet" href="formulier.css">
-</head>
-<body>
+    <link rel="stylesheet" href="formulier.css" />
+  </head>
+  <body>
     <header>
+      <div class="portfolio-title">
+        <h1>Mijn portfolio</h1>
+      </div>
 
-        <div class="portfolio-title">
-             <h1> Mijn portfolio</h1>
-        </div>
-
-        <div class="menu">
-            <nav>
-                 <ul>
-                    <li><a href="../../MainPage.html#introductie">Introductie</a></li>
-                    <li><a href="../../MainPage.html#elementen">Onderdelen</a></li>
-                </ul>
-            </nav>
-        </div>
+      <div class="menu">
+        <nav>
+          <ul>
+            <li><a href="../../MainPage.html#introductie">Introductie</a></li>
+            <li><a href="../../MainPage.html#elementen">Onderdelen</a></li>
+          </ul>
+        </nav>
+      </div>
     </header>
 
     <div class="main-content">
-        <div class="content-wrapper">
-            <table id="data-table">
-                <thead>
-                    <tr>
-                        <th>ID</th>
-                        <th>Naam</th>
-                        <th>Leeftijd</th>
-                        <th></th>
-                    </tr>
-                </thead>
-                <tbody>
-                </tbody>
-            </table>
-            <form id="add-item-form" class="narrow">
-                <div class="form">
-                    <label for="id">ID:</label>
-                    <input type="text" id="id" name="id" required><br><br>
-                </div>
-                <div class="form">
-                    <label for="name">Naam:</label>
-                    <input type="text" id="name" name="name" required><br><br>
-                </div>
-                <div class="form">
-                    <label for="age">Leeftijd:</label>
-                    <input type="number" id="age" name="age" required><br><br>
-                </div>
-                <div class="form">
-                    <label for="postcode">Postcode:</label>
-                    <input type="text" id="postcode" name="postcode" required pattern="^[1-9][0-9]{3}$"><br><br>
-                </div>
-              
-                <br>
-                <button id="toevoegen" type="button" class="button-toevoegen" >Toevoegen</button>
-                <br>
-                <button id="verzenden" type="button" value="Verzenden" class="button">Verzenden</button>
-            </form>
+      <div class="content-wrapper">
+        <table id="data-table">
+          <thead>
+            <tr>
+              <th>ID</th>
+              <th>Naam</th>
+              <th>Leeftijd</th>
+              <th></th>
+            </tr>
+          </thead>
+          <tbody></tbody>
+        </table>
+        <form id="add-item-form" class="narrow">
+          <div class="form">
+            <label for="id">ID:</label>
+            <input type="text" id="id" name="id" required /><br /><br />
+          </div>
+          <div class="form">
+            <label for="name">Naam:</label>
+            <input type="text" id="name" name="name" required /><br /><br />
+          </div>
+          <div class="form">
+            <label for="age">Leeftijd:</label>
+            <input type="number" id="age" name="age" required /><br /><br />
+          </div>
+          <div class="form">
+            <label for="postcode">Postcode:</label>
+            <input
+              type="text"
+              id="postcode"
+              name="postcode"
+              required
+              pattern="^[1-9][0-9]{3}$"
+            /><br /><br />
+          </div>
 
-            <p class="side-tekst"> Geef hier namen, leeftijden en ID's in en duw op toevoegen. Geef als laatste jouw naam, leeftijd, postcode en ID in en duw op verzenden</p>
-            <p id="errorUnderage" style="display: none; color: red;">Deze game is niet geschikt voor minderjarigen.</p>
-            <div id="result"></div>
-        </div>
+          <br />
+          <button id="toevoegen" type="button" class="button">
+            Toevoegen
+          </button>
+          <br />
+          <button id="verzenden" type="button" value="Verzenden" class="button">
+            Verzenden
+          </button>
+        </form>
+
+        <p class="side-tekst">
+          Geef hier namen, leeftijden en ID's in en duw op toevoegen. Geef als
+          laatste jouw naam, leeftijd, postcode en ID in en duw op verzenden
+        </p>
+        <p id="errorUnderage" style="display: none; color: red">
+          Deze game is niet geschikt voor minderjarigen.
+        </p>
+        <div id="result"></div>
+      </div>
     </div>
     <script src="formulier.js"></script>
-</body>
+  </body>
 </html>

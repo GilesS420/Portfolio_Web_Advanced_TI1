@@ -1,119 +1,91 @@
-let jsonData = [];
-let updateClicked = false;
-
-function updateTable() {
-    const tbody = document.querySelector('#data-table tbody');
-    tbody.innerHTML = '';
-
-    jsonData.forEach((item, index) => {
-        const row = document.createElement('tr');
-        row.innerHTML = `
-            <td>${item.id}</td>
-            <td contenteditable="true" class="editable" data-index="${index}" data-field="name">${item.name}</td>
-            <td contenteditable="true" class="editable" data-index="${index}" data-field="age">${item.age}</td>
-            <td><button onclick="deleteItem(${index})">Verwijderen</button></td>
-        `;
-        tbody.appendChild(row);
-    });
-
-    document.querySelectorAll('.editable').forEach(cell => {
-        cell.addEventListener('blur', function(event) {
-            const index = event.target.getAttribute('data-index');
-            const field = event.target.getAttribute('data-field');
-            const value = event.target.innerText;
-
-            if (field === "age") {
-                jsonData[index][field] = parseInt(value);
-            } else {
-                jsonData[index][field] = value;
-            }
-        });
-    });
-}
-
-function deleteItem(index) {
-    jsonData.splice(index, 1);
-    updateTable();
-}
-
-document.getElementById('add-item-form').addEventListener('submit', async function(event) {
-    event.preventDefault();
-
-    const id = document.getElementById('id').value;
-    const name = document.getElementById('name').value;
-    const age = document.getElementById('age').value;
-    const postcode = document.getElementById('postcode').value;
-
-    if (!validateForm(name, age, postcode)) {
-        alert('Vul alle velden correct in.');
-        return;
-    }
-
-    const newItem = { id: parseInt(id), name: name, age: parseInt(age) };
-    jsonData.push(newItem);
-    saveToLocalStorage(name, age, postcode);
-
-    // Save to db.json via POST request
-    await saveToDatabase(newItem);
-
-    updateHeader();
-    updateTable();
-    event.target.reset();
+const cards = document.querySelectorAll(".card");
+cards.forEach((card) => {
+  const textWidth = card.scrollWidth;
+  card.style.width = textWidth + "px";
 });
 
-function validateForm(name, age, postcode) {
-    const postcodeRegex = /^[1-9][0-9]{3}$/;
-    return name && age && !isNaN(age) && postcodeRegex.test(postcode);
+function selectCard(card) {
+  const cards = document.querySelectorAll(".card");
+  cards.forEach((c) => c.classList.remove("selected"));
+  card.classList.add("selected");
 }
 
-function saveToLocalStorage(name, age, postcode) {
-    const user = { name, age, postcode };
-    localStorage.setItem('user', JSON.stringify(user));
-}
-
-async function saveToDatabase(data) {
-    const url = 'http://your-server-endpoint/db.json'; // Replace with your actual server endpoint
-    try {
-        await postData(url, data);
-    } catch (error) {
-        console.error('Failed to save data to the server:', error);
+function changeText() {
+  const selectedCard = document.querySelector(".card.selected");
+  if (selectedCard) {
+    const newText = prompt("Geef het een nieuwe naam");
+    if (newText !== null) {
+      selectedCard.textContent = newText;
+      saveCardData(selectedCard);
     }
+  } else {
+    alert("Selecteer eerst een element");
+  }
 }
 
-async function postData(url = '', data = {}) {
-    try {
-        const response = await fetch(url, {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify(data)
-        });
-        if (!response.ok) {
-            throw new Error('Netwerk error');
-        }
-        return response.json();
-    } catch (error) {
-        console.error('probleem:', error);
+function changeColor() {
+  const selectedCard = document.querySelector(".card.selected");
+  if (selectedCard) {
+    const newColor = prompt(
+      "geef een nieuwe kleur in het engels of de kleurcode. (red, #aaa,..."
+    );
+    if (newColor) {
+      selectedCard.style.backgroundColor = newColor;
+      saveCardData(selectedCard);
     }
+  } else {
+    alert("Selecteer eerst een element");
+  }
 }
+
+function resetCard() {
+  const selectedCard = document.querySelector(".card.selected");
+  if (selectedCard) {
+    selectedCard.textContent = selectedCard.dataset.originalText;
+    selectedCard.style.backgroundColor = "#2b3137";
+  } else {
+    alert("Selecteer eerst een element");
+  }
+}
+
+function saveCardData(card) {
+  const cardId = card.dataset.cardId;
+  const cardData = {
+    text: card.textContent,
+    color: card.style.backgroundColor,
+  };
+  localStorage.setItem(`card_${cardId}`, JSON.stringify(cardData));
+}
+
+function restoreCardData() {
+  const cards = document.querySelectorAll(".card");
+  cards.forEach((card) => {
+    const cardId = card.dataset.cardId;
+    const cardData = JSON.parse(localStorage.getItem(`card_${cardId}`));
+    if (cardData) {
+      card.textContent = cardData.text;
+      card.style.backgroundColor = cardData.color;
+    }
+  });
+}
+
+cards.forEach((card, index) => {
+  card.dataset.cardId = index; // Gebruik index als unieke identifier
+});
 
 function updateHeader() {
-    const userNameSpan = document.getElementById('userName');
-    const userAgeSpan = document.getElementById('userAge');
-    const user = JSON.parse(localStorage.getItem('user'));
-    if (user) {
-        userNameSpan.textContent = user.name;
-        userAgeSpan.textContent = user.age;
-    }
+  const userNameSpan = document.getElementById("userName");
+  const userAgeSpan = document.getElementById("userAge");
+
+  const user = JSON.parse(localStorage.getItem("user"));
+  if (user) {
+    userNameSpan.textContent = user.name;
+    userAgeSpan.textContent = user.age;
+  }
 }
 
-document.addEventListener('DOMContentLoaded', () => {
-    updateTable();
-    updateHeader();
-});
-
-document.getElementById('updateButton').addEventListener('click', function(event) {
-    updateClicked = true;
-    updateHeader();
+document.addEventListener("DOMContentLoaded", () => {
+  updateTable();
+  updateHeader();
+  restoreCardData();
 });

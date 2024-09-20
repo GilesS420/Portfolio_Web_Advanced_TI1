@@ -1,131 +1,121 @@
 # Portfolio_Web_Advanced_TI1
-This is my portfolio to showcase my skills in web development
-
-These subjects are explained shortly and are implemented in the portfolio:
-
-Elementen selecteren/ Select elements
----------------------------------------------------------------------------------------------------------------------------------------------------------
-explination:
-
-located: 
-
-Elementen manipuleren/ Manipulate elements
----------------------------------------------------------------------------------------------------------------------------------------------------------
-explination:
-
-located: 
-
-Event aan een element koppelen/ link an event to an element
----------------------------------------------------------------------------------------------------------------------------------------------------------
-explination:
-
-located: 
-
-Formulier valideren / Validate a form
----------------------------------------------------------------------------------------------------------------------------------------------------------
-explination:
-
-located: 
-
-Gebruiken van een constante  / usage of const.
----------------------------------------------------------------------------------------------------------------------------------------------------------
-explination:
-
-located: 
-
-Gebruiken van template literals / Usage of template literals
----------------------------------------------------------------------------------------------------------------------------------------------------------
-explination:
-
-located: 
-
-Destructuring 
----------------------------------------------------------------------------------------------------------------------------------------------------------
-explination:
-
-located: 
-
-Spread & Rest operator 
----------------------------------------------------------------------------------------------------------------------------------------------------------
-explination:
-
-located: 
-
-Iteration over een array
----------------------------------------------------------------------------------------------------------------------------------------------------------
-explination:
-
-located: 
-
-Arrow function
----------------------------------------------------------------------------------------------------------------------------------------------------------
-explination:
-
-located: 
-
-Callback function
----------------------------------------------------------------------------------------------------------------------------------------------------------
-explination:
-
-located: 
-
-Promise
----------------------------------------------------------------------------------------------------------------------------------------------------------
-explination:
-
-located: 
-
-Consumer methods
----------------------------------------------------------------------------------------------------------------------------------------------------------
-explination:
-
-located: 
-
-Async & Await
----------------------------------------------------------------------------------------------------------------------------------------------------------
-explination:
-
-located: 
-
-Self executing function
----------------------------------------------------------------------------------------------------------------------------------------------------------
-explination:
-
-located: 
-
-Fetch om data op te halen / Frtch to retrieve data
----------------------------------------------------------------------------------------------------------------------------------------------------------
-explination:
-
-located: 
-
-JSON manipuleren en weergeven / Manipulate and display JSON
----------------------------------------------------------------------------------------------------------------------------------------------------------
-explination:
-
-located: 
-
-Basis CSS Animatie / Basic css animation
----------------------------------------------------------------------------------------------------------------------------------------------------------
-explination:
-
-located: 
-
-Gebruiken van een flexbox of CSS grid / usage of a flexbox or a CSS grid
----------------------------------------------------------------------------------------------------------------------------------------------------------
-explination:
-
-located: 
-
-Gebruik van LocalStorage / usage of local storage
----------------------------------------------------------------------------------------------------------------------------------------------------------
-explination:
-
-located: 
+Dit is mijn portfolio om mijn vaardigheden in webontwikkeling te presenteren. Dit protfolio is gemaakt in opdracht van Kevin Felix voor het vak Web Advanced (TI1)
 
 
 
-Sources:
+## Hoe starten
+Om een volledig functionele applicatie te hebben, heb je een json-server nodig. Als je dit al hebt, kun je stap 1 overslaan.
+
+### Stap 1: install the jason server.
+Open je terminal en voer het volgende commando in: `` npm install -g json-server ``. Dit zal enkele minuten duren om te installeren.
+
+### stap 2: start the JSON server.
+In je terminal, voer het volgende commando uit: ``json-server --watch db.json --port 3000 ``. De server draait nu, de applicatie zal nu volledig werken.
+
+### !! je hebt ook de live-server extensie nogdig !!
+
+### stap 3: start de web-pagina
+open de file MainPage.html, en klik op *Go live* recht beneden. Dit opend automatish een tab in je browser.
+
+
+
+## Elementen
+Deze onderwerpen worden hier kort uitgelegd  met telkens een voorbeld gehaald uit het protfolio. Elk element wordt ook een locatie gegeven zodat u het makkelijker kan terugvinden in de code.
+
+ ### Elementen selecteren
+Uitleg: De functie ``selectCard(card)`` zorgt ervoor dat wanneer een kaart wordt aangeklikt, alle andere kaarten deselecteren. De aangeklikte kaart wordt gemarkeerd als geselecteerd door de klasse ``"selected"`` toe te voegen.
+
+--------
+### Elementen manipuleren
+Uitleg: De functie ``changeColor`` selecteert een kaartelement dat door de gebruiker is gekozen en vraagt een nieuwe kleur. Nadat de gebruiker een kleur heeft ingevoerd, wordt de achtergrondkleur van het kaartelement aangepast.
+
+--------
+### Een gebeurtenis aan een element koppelen
+Uitleg: gebruik van event listeners, zoals  het toevoegen van een ``'click'-event ``listener aan elk ``'.card'-element``, waardoor een functie wordt aangeroepen wanneer erop wordt geklikt.
+
+--------
+### Een formulier valideren
+Uitleg: De functie ``validateForm(name, age, postcode)`` valideert het formulier op basis van de ingevoerde waarden voor naam, leeftijd en postcode.
+
+--------
+### Gebruik maken van een constante
+Uitleg: ``const randomOffset = Math.floor(Math.random() * 10);`` definieert een constante randomOffset. Deze constante zorgt ervoor dat er gegevens woden aangepast als er op een knop wordt geklikt
+
+--------
+### Gebruik van template literals
+Uitleg:  In de ``row.innerHTML`` binnen de ``updateTable()-functie`` worden Template literals gebruikt om de rij van de tabel te maken.
+
+--------
+### Destructuring
+Uitleg: ``const { name, age, postcode: originalPostcode } = user;``  gebruikt destructuring om specifieke eigenschappen van een object te halen.
+
+--------
+### Spread- & rest-operator
+Uitleg: ``const userData = { ...user, modifiedPostcode };`` maakt gebruik van de spread-operator om een object te maken met extra eigenschappen.
+
+--------
+### Iteration  over een array
+Uitleg: De ``forEach``-methode wordt gebruikt om door de jsonData-array te itereren in de ``updateTable()``-functie.
+
+--------
+### Arrow function
+Uitleg: De arrow-functie binnen de forEach-lus genereert de HTML-inhoud voor elke rij van de tabel door de gegevens in de jsonData-array te doorlopen.
+
+--------
+### Callback function
+Uitleg: De ``addEventListener``-methode accepteert een callback-functie, bijvoorbeeld in de event listeners voor klikgebeurtenissen.
+
+--------
+### Promise
+Uitleg: De functie ``postData(url, data)`` retourneert een Promise omdat deze asynchrone fetch-operaties uitvoert en het resultaat afhandelt.
+
+--------
+### consumer methods
+Uitleg:  In de ``then()``-methode van de Promise worden de gegevens geconsumeerd die zijn opgehaald door de fetch-operatie.
+
+--------
+### Async & Await
+Uitleg: De functie ``saveToDatabase(data)`` is gemarkeerd met het async-keyword en wacht op de resolutie van de ``postData``-functie met het await-keyword.
+
+--------
+### Self executing function
+Uitleg: De zelf-uitvoerende functie in de code zorgt ervoor dat de inhoud ervan wordt uitgevoerd zodra het DOM volledig is geladen, waardoor het mogelijk is om gebruikersgegevens op te halen, te verwerken en op te slaan nadat de pagina is geladen.
+
+--------
+### Fetch om data op te halen
+Uitleg: In plaats van data op te halen, wordt de Fetch API gebruikt om gegevens naar een server te verzenden in de postData-functie.
+
+--------
+### JSON manipuleren en weergeven
+Uitleg: ``.then(response => response.json())`` converteert de response naar JSON-formaat. 
+
+--------
+### Basis CSS-animatie
+Uitleg: De animatie wordt gebruikt in de sectie met de id #introductie. Het element met deze id wordt geanimeerd met behulp van de fadeIn-animatie. Deze animatie past de eigenschappen opacity en transform aan om het element van onzichtbaar naar zichtbaar te laten overgaan wanneer de pagina wordt geladen.
+
+--------
+### Gebruik van een flexbox of CSS-grid
+Uitleg:
+-  Flexbox wordt gebruikt voor de opmaak van de elementen in de ``.container.`` Hier zorgt het voor de juiste uitlijning van de elementen binnen de container.
+  
+-  CSS Grid wordt gebruikt voor het ontwerp van de header. Het maakt gebruik van ``display: grid;`` om een raster te maken met drie kolommen.
+
+--------
+### Gebruik van LocalStorage
+Uitleg: De functie ``saveToLocalStorage(name, age, postcode)`` gebruikt :``localStorage.setItem()`` om gegevens op te slaan in de lokale opslag van de browser.
+
+--------
+
+
+ 
+
+
+## Bronnen:
+
+PowerPoints van het vak Web-essentials, Web advanced, programming essentials 1 
+
+note: door outage van de Chat GPT-serves ben ik verschillende chats met chatGPT verloren (outage vanaf 4 juni)
+
 
 https://www.w3schools.com/css/css3_gradients.asp
 https://stackoverflow.com/questions/38497334/how-to-run-html-file-on-localhost 
@@ -145,4 +135,11 @@ https://www.youtube.com/watch?v=jH-aOdzAuwA&list=PLGsnrfn8XzXhJUyCxjyvMmHDD-HbL2
 https://developer.mozilla.org/en-US/docs/Web/API/Window/localStorage
 https://www.w3schools.com/jsref/prop_win_localstorage.asp
 https://chatgpt.com/share/73c47d24-03cc-4af2-a72c-a20bc9315a4f
-https://chatgpt.com/share/7d1ed004-8c7c-4326-92e7-35045a539c7b
+https://chatgpt.com/share/1f7f8b3e-a9c1-4adf-ae47-3407adc30c0b
+https://www.w3schools.com/js/js_json.asp
+https://www.digitalocean.com/community/tutorials/how-to-work-with-json-in-javascript
+https://chatgpt.com/share/f30b8d73-9b3b-45ce-81a3-d9ad290fcf28
+https://www.freecodecamp.org/news/how-to-write-a-good-readme-file/
+https://chatgpt.com/share/bb2946f9-6ecf-4dba-938f-fc9b79b41e90
+
+
